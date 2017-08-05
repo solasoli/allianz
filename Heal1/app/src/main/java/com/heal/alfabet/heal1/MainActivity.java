@@ -1,6 +1,7 @@
 package com.heal.alfabet.heal1;
 
 import android.content.ClipData;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -151,15 +152,14 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
 
     }
 
-
-
     @Override
-    public void onNothingSelected(Menu menu) {
-
+    public void onNothingSelected() {
         getMenuInflater().inflate(R.menu.dynamical, menu);
-        return true;
 
     }
+
+
+
 
     @Override
     public void onOptionsItemSelected(MenuItem item) {
@@ -194,4 +194,20 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
 
         return true;
     }
+
+    private LineDataSet createSet() {
+
+        LineDataSet set = new LineDataSet(null, "Data Set 1");
+        set.setLineWidth(2.5f);
+        set.setCircleRadius(4.5f);
+        set.setColor(Color.rgb(240, 99, 99));
+        set.setCircleColor(Color.rgb(240,99,99));
+        set.setHighLightColor(190, 190, 190);
+        set.setAxisDependency(YAxis.AxisDependency.LEFT);
+        set.setValueTextSize(10f);
+
+        return set;
+    }
+
+
 }
